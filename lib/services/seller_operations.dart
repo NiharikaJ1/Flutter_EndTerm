@@ -4,21 +4,15 @@ import 'package:colorapp/utils/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class SellerOperations {
-  // add() {} --> new user registration
-  // update() {} --> update an existing user
-  // remove() {} --> deactivate the user account
-
-  // Step 1: Create an instance of firebase Auth service
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  // register
   Future<Message> add(Seller seller) async {
     try {
       await _auth.createUserWithEmailAndPassword(
           email: seller.userId, password: seller.password);
       Message msg = Message.takeMessage(
           message: 'Registration is successful!', code: Constants.SUCCESS);
-          print("YES");
+      print("YES");
       return msg;
     } catch (e) {
       return Message.takeMessage(

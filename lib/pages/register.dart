@@ -29,8 +29,8 @@ class _RegisterValidationState extends State<RegisterValidation> {
   @override
   Widget build(BuildContext context) {
     TextEditingController nameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  TextEditingController appIdController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
+    TextEditingController appIdController = TextEditingController();
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -50,7 +50,7 @@ class _RegisterValidationState extends State<RegisterValidation> {
                       width: 200,
                       height: 150,
                       child: Image.network(
-                          'https://media.istockphoto.com/id/1283536918/vector/welcome-concept-flat-vector-foe-website-happy-tiny-people-are-near-huge-text-cartoon-office.jpg?s=1024x1024&w=is&k=20&c=AA8aEWA4VvtyD8CWuul-wRjUcSL53nYGmA5rzdH4RuI=')),
+                          'https://www.shutterstock.com/image-vector/welcome-calligraphic-inscription-smooth-lines-260nw-1721907820.jpg')),
                 ),
               ),
               Padding(
@@ -58,7 +58,7 @@ class _RegisterValidationState extends State<RegisterValidation> {
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 15),
                 child: TextFormField(
-                  controller: nameController,
+                    controller: nameController,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Email',
@@ -68,11 +68,10 @@ class _RegisterValidationState extends State<RegisterValidation> {
                       EmailValidator(errorText: "Enter valid email id"),
                     ])),
               ),
-
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15),
                 child: TextFormField(
-                  controller: appIdController,
+                    controller: appIdController,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'APPID',
@@ -85,7 +84,7 @@ class _RegisterValidationState extends State<RegisterValidation> {
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 0),
                 child: TextFormField(
-                  controller: passwordController,
+                    controller: passwordController,
                     obscureText: true,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(),
@@ -98,32 +97,17 @@ class _RegisterValidationState extends State<RegisterValidation> {
                       MaxLengthValidator(15,
                           errorText:
                               "Password should not be greater than 15 characters")
-                    ])
-                    //validatePassword,        //Function to check validation
-                    ),
+                    ])),
               ),
-
-              
-
-              //  ElevatedButton(
-              //    onPressed: () {
-              //      TODO FORGOT PASSWORD SCREEN GOES HERE
-              //    },
-              //    child: Text(
-              //      'Forgot Password',
-              //      style: TextStyle(color: Colors.blue, fontSize: 15),
-              //   ),
-              //  ),
-
               Container(
                 height: 50,
                 width: 250,
                 decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: Colors.yellow,
                     borderRadius: BorderRadius.circular(20)),
                 child: ElevatedButton(
                   onPressed: () async {
-                   Seller seller = Seller.takeInput(
+                    Seller seller = Seller.takeInput(
                         userId: nameController.text,
                         password: passwordController.text,
                         appId: appIdController.text);

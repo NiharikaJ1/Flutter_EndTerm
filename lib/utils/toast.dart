@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 
 createToast(String message, BuildContext context) async {
   await Flushbar(
-    title: 'Shop App',
+    title: 'Flower App',
     message: message,
     duration: const Duration(seconds: 3),
   ).show(context);

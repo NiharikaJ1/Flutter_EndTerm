@@ -6,7 +6,6 @@ import 'package:colorapp/utils/toast.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
-
 class LoginFormValidation extends StatefulWidget {
   @override
   _LoginFormValidationState createState() => _LoginFormValidationState();
@@ -28,8 +27,8 @@ class _LoginFormValidationState extends State<LoginFormValidation> {
 
   @override
   Widget build(BuildContext context) {
-      TextEditingController nameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+    TextEditingController nameController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -48,14 +47,14 @@ class _LoginFormValidationState extends State<LoginFormValidation> {
                       width: 200,
                       height: 150,
                       child: Image.network(
-                          'https://media.istockphoto.com/id/1283536918/vector/welcome-concept-flat-vector-foe-website-happy-tiny-people-are-near-huge-text-cartoon-office.jpg?s=1024x1024&w=is&k=20&c=AA8aEWA4VvtyD8CWuul-wRjUcSL53nYGmA5rzdH4RuI=')),
+                          'https://www.shutterstock.com/image-vector/welcome-calligraphic-inscription-smooth-lines-260nw-1721907820.jpg')),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 15),
                 child: TextFormField(
-                  controller: nameController,
+                    controller: nameController,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Email',
@@ -82,36 +81,24 @@ class _LoginFormValidationState extends State<LoginFormValidation> {
                       MaxLengthValidator(15,
                           errorText:
                               "Password should not be greater than 15 characters")
-                    ])
-                    //validatePassword,        //Function to check validation
-                    ),
+                    ])),
               ),
-              //  ElevatedButton(
-              //    onPressed: () {
-              //      TODO FORGOT PASSWORD SCREEN GOES HERE
-              //    },
-              //    child: Text(
-              //      'Forgot Password',
-              //      style: TextStyle(color: Colors.blue, fontSize: 15),
-              //   ),
-              //  ),
-
               Container(
                 height: 50,
                 width: 250,
                 decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: Colors.yellow,
                     borderRadius: BorderRadius.circular(20)),
                 child: ElevatedButton(
                   onPressed: () async {
-                     Seller seller = Seller.takeInput(
-                      userId: nameController.text,
-                      appId: "A111",
-                      password: passwordController.text);
-                  SellerOperations sellerOps = SellerOperations();
-                  Message mess = await sellerOps.read(seller);
-                  createToast(mess.message, context);
-                  Future.delayed(Duration(seconds: 1));
+                    Seller seller = Seller.takeInput(
+                        userId: nameController.text,
+                        appId: "A111",
+                        password: passwordController.text);
+                    SellerOperations sellerOps = SellerOperations();
+                    Message mess = await sellerOps.read(seller);
+                    createToast(mess.message, context);
+                    Future.delayed(Duration(seconds: 1));
                   },
                   child: Text(
                     'Login',
@@ -126,7 +113,7 @@ class _LoginFormValidationState extends State<LoginFormValidation> {
                 height: 50,
                 width: 250,
                 decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: Colors.yellow,
                     borderRadius: BorderRadius.circular(20)),
                 child: ElevatedButton(
                   onPressed: () {
